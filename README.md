@@ -1,13 +1,20 @@
 # odsbn-autosnipp.ahk : 
-For use with **Obsidian.md**. this works with [AutoHotkey ANSI]((https://www.autohotkey.com/download/1.1/AutoHotkey_1.1.33.02.zip)) (AutoHotkeyA32.exe) for better accented characters support.<br>
-a quick way to create reference blocks/transclusions from text selection with CTRL SHIFT X / CTRL V.<br>
+For use with **Obsidian.md**. 
+
+update 20200806 : now works with [AutoHotkey](https://www.autohotkey.com/) ANSI (obsidian-autosnipp_A) or Unicode (obsidian-autosnipp_U)<br>
+
+a quick way to create reference blocks/transclusions from text selection with `CTRL SHIFT X` / `CTRL V`.<br>
+You can also clone a block with `CTRL SHIFT C`
+
 ### HOW:
 * before first use: edit the .ahk to configure your destination folder and naming convention.
 * select a block of text and use CTR+SHIFT+X (or CTRL+SHIFT+C for copy) to cut the selected text into a NEW FILE in the /snippets directory of your vault (create the folder beforehand to avoid problems). The file will be named in the format :<br> `yourvault/snippets/yyyyMM/xx_yyyyMMhhmmss-msec_%sourcewindowtitle%.md` and the link to the file is put in the clipboard, ready to be pasted as an Obsidian transclusion (with the format `![[%yourfile%]]`).<br>
 ### WHY:
 since Obsidian doesn't have block-level transclusions, this is a quick hack to get the same functionnality, but manually. Select your text, hit the shortcut, the selection is now a file that can be referenced elsewhere and modified, thus making `clones` or `instances`.<br>
 ### KNOWN ISSUES :
-it requires autohotkey ANSI or else it will throw error messages. To make it compatible with ahk ISO would require to encode the clipboard text in utf8 with BOM. 
+if you are using Autohotkey Unicode, run obsidian-autosnipp_U.ahk,
+if you are using Autohotkey Ansi, run obsidian-autosnipp_A.ahk,
+or else you will get errors.
 
 ![obsdn-autosnipp-demo.gif](https://github.com/cannibalox/Obsdn-Autosnipp/blob/master/obsdn-autosnipp-demo.gif)
 
